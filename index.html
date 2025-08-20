@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Buygadgets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(0px) translateY(0px); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .meta-info {
+            background: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .meta-info p {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .meta-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+            position: relative;
+        }
+
+        h2:first-of-type {
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0 20px 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4CAF50;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p>Buygadgets - Your trusted gadget shopping destination</p>
+        </div>
+
+        <div class="content">
+            <div class="meta-info">
+                <p><strong>Effective Date:</strong> [Insert Date]</p>
+                <p><strong>Last Updated:</strong> [Insert Date]</p>
+                <p><strong>Company:</strong> Buygadgets</p>
+            </div>
+
+            <div class="highlight">
+                <p><strong>Important Notice:</strong> Buygadgets ("we," "our," or "us") values the privacy of our users ("you," "your"). This Privacy Policy explains how we collect, use, store, and protect your information when you use our e-commerce mobile application and services for purchasing gadgets such as phones, laptops, and accessories.</p>
+                <p>By using Buygadgets, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+            </div>
+
+            <h2>1. Information We Collect</h2>
+
+            <h3>1.1 Personal Information</h3>
+            <p>When you use Buygadgets, we may collect the following personal information:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Name, email address, phone number, date of birth</li>
+                <li><strong>Location Data:</strong> Delivery address, billing address, and general location for service optimization</li>
+                <li><strong>Payment Information:</strong> Payment method details (processed securely through third-party payment processors)</li>
+                <li><strong>Order History:</strong> Purchase records, transaction details, and product preferences</li>
+                <li><strong>Communication Data:</strong> Messages, reviews, and customer service interactions</li>
+            </ul>
+
+            <h3>1.2 Technical Information</h3>
+            <p>We may automatically collect certain technical information, including:</p>
+            <ul>
+                <li>Device information (device type, operating system, unique device identifiers)</li>
+                <li>App usage data (features used, time spent, interaction patterns)</li>
+                <li>Log data (IP addresses, access times, error logs)</li>
+                <li>Cookies and similar tracking technologies (where consent is provided)</li>
+            </ul>
+
+            <h3>1.3 Information from Third Parties</h3>
+            <p>We may receive information about you from:</p>
+            <ul>
+                <li>Social media platforms (if you choose to link accounts)</li>
+                <li>Payment processors</li>
+                <li>Delivery services</li>
+                <li>Marketing partners (with appropriate consent)</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+
+            <h3>2.1 Service Provision</h3>
+            <ul>
+                <li>Create and manage user accounts</li>
+                <li>Process orders and complete purchases</li>
+                <li>Arrange delivery and fulfillment</li>
+                <li>Provide customer support and order updates</li>
+                <li>Handle returns, refunds, and warranty claims</li>
+            </ul>
+
+            <h3>2.2 Service Improvement</h3>
+            <ul>
+                <li>Personalize your shopping experience and recommendations</li>
+                <li>Analyze app performance and user behavior</li>
+                <li>Conduct research and analytics to improve our services</li>
+                <li>Develop new features and products</li>
+            </ul>
+
+            <h3>2.3 Communication</h3>
+            <ul>
+                <li>Send transactional messages (order confirmations, shipping updates)</li>
+                <li>Provide customer support</li>
+                <li>Send marketing communications (with your consent)</li>
+                <li>Notify you of important policy or service changes</li>
+            </ul>
+
+            <h3>2.4 Legal and Security</h3>
+            <ul>
+                <li>Prevent fraud and ensure security</li>
+                <li>Comply with legal obligations</li>
+                <li>Protect our rights and property</li>
+                <li>Resolve disputes</li>
+            </ul>
+
+            <h2>3. Legal Basis for Processing (GDPR/NDPR Compliance)</h2>
+            <p>We process your personal data based on:</p>
+            <ul>
+                <li><strong>Consent:</strong> When you provide explicit consent (e.g., marketing communications)</li>
+                <li><strong>Contract Performance:</strong> To fulfill our services and process your orders</li>
+                <li><strong>Legal Obligation:</strong> To comply with applicable laws and regulations</li>
+                <li><strong>Legitimate Interest:</strong> To improve our services, prevent fraud, and ensure security</li>
+            </ul>
+
+            <h2>4. Data Sharing and Disclosure</h2>
+
+            <h3>4.1 Third-Party Service Providers</h3>
+            <p>We may share your information with trusted third-party service providers who assist us in operating our business:</p>
+            <ul>
+                <li><strong>Payment Processors:</strong> Stripe, PayPal (for secure payment processing)</li>
+                <li><strong>Analytics:</strong> Google Analytics, Firebase Analytics (for app performance and user insights)</li>
+                <li><strong>Cloud Services:</strong> Firebase, AWS (for data storage and app functionality)</li>
+                <li><strong>Delivery Services:</strong> DHL, UPS, local courier services (for order fulfillment)</li>
+                <li><strong>Customer Support:</strong> Zendesk or similar platforms (for support ticket management)</li>
+            </ul>
+
+            <h3>4.2 Legal Requirements</h3>
+            <p>We may disclose your information when required by law, legal process, or to:</p>
+            <ul>
+                <li>Comply with legal obligations</li>
+                <li>Protect and defend our rights or property</li>
+                <li>Prevent or investigate possible wrongdoing</li>
+                <li>Protect personal safety of users or the public</li>
+            </ul>
+
+            <h3>4.3 Business Transfers</h3>
+            <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of the business transaction.</p>
+
+            <h2>5. Data Security and Storage</h2>
+
+            <h3>5.1 Security Measures</h3>
+            <p>We implement appropriate technical and organizational security measures:</p>
+            <ul>
+                <li>Data encryption during transmission (SSL/TLS)</li>
+                <li>Secure servers with restricted access</li>
+                <li>Regular security audits and monitoring</li>
+                <li>Employee training on data protection</li>
+                <li>Access controls and authentication systems</li>
+            </ul>
+
+            <h3>5.2 Data Retention</h3>
+            <p>We retain your personal information for as long as:</p>
+            <ul>
+                <li>Your account remains active</li>
+                <li>Required to provide services</li>
+                <li>Necessary for legal, tax, or regulatory purposes</li>
+                <li>Required to resolve disputes or enforce agreements</li>
+            </ul>
+            <p>Typically, we retain data for 7 years after account closure, unless longer retention is required by law.</p>
+
+            <h3>5.3 International Data Transfers</h3>
+            <p>Your data may be processed and stored in countries outside Nigeria. When transferring data internationally, we ensure appropriate safeguards are in place to protect your information.</p>
+
+            <h2>6. Your Rights and Choices</h2>
+            <p>Under applicable data protection laws (NDPR, GDPR), you have the following rights:</p>
+
+            <h3>6.1 Access and Portability</h3>
+            <ul>
+                <li>Request access to your personal data</li>
+                <li>Receive a copy of your data in a portable format</li>
+            </ul>
+
+            <h3>6.2 Correction and Deletion</h3>
+            <ul>
+                <li>Update or correct inaccurate personal information</li>
+                <li>Request deletion of your personal data (subject to legal requirements)</li>
+            </ul>
+
+            <h3>6.3 Processing Rights</h3>
+            <ul>
+                <li>Object to or restrict processing of your data</li>
+                <li>Withdraw consent where processing is based on consent</li>
+            </ul>
+
+            <h3>6.4 Communication Preferences</h3>
+            <ul>
+                <li>Opt out of marketing communications</li>
+                <li>Choose notification preferences</li>
+            </ul>
+
+            <div class="highlight">
+                <h3>6.5 Exercising Your Rights</h3>
+                <p>We will respond to your request within 30 days (or as required by applicable law).</p>
+            </div>
+
+            <h2>7. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Remember your preferences and settings</li>
+                <li>Analyze app usage and performance</li>
+                <li>Provide personalized content and recommendations</li>
+                <li>Enable certain app features</li>
+            </ul>
+            <p>You can manage cookie preferences through your device settings or by contacting us.</p>
+
+            <h2>8. Children's Privacy</h2>
+            <p>Buygadgets is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we discover that we have collected such information, we will delete it immediately and may terminate the associated account.</p>
+            <p>Parents or guardians who believe their child has provided personal information should contact us immediately.</p>
+
+            <h2>9. Marketing and Communications</h2>
+
+            <h3>9.1 Marketing Consent</h3>
+            <p>We will only send marketing communications with your explicit consent. You can:</p>
+            <ul>
+                <li>Opt in during account creation or in app settings</li>
+                <li>Withdraw consent at any time through unsubscribe links or account settings</li>
+            </ul>
+
+            <h3>9.2 Transactional Communications</h3>
+            <p>We may send service-related communications (order updates, security alerts) regardless of marketing preferences, as these are necessary for service provision.</p>
+
+            <h2>10. Data Breach Notification</h2>
+            <p>In the unlikely event of a data breach that poses a risk to your rights and freedoms, we will:</p>
+            <ul>
+                <li>Notify relevant supervisory authorities within 72 hours</li>
+                <li>Inform affected users without undue delay</li>
+                <li>Provide clear information about the nature of the breach and steps being taken</li>
+            </ul>
+
+            <h2>11. Legal Compliance</h2>
+            <p>We comply with applicable data protection laws, including:</p>
+            <ul>
+                <li>Nigeria Data Protection Regulation (NDPR)</li>
+                <li>General Data Protection Regulation (GDPR), where applicable</li>
+                <li>California Consumer Privacy Act (CCPA), where applicable</li>
+            </ul>
+
+            <h2>12. Changes to this Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any changes will be posted here with a new "Effective Date." We encourage you to review this page regularly to stay informed about how we protect your information.</p>
+            <p>If we make material changes, we will provide additional notice through the app or via email.</p>
+
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please don't hesitate to contact us:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>📧 Email</strong><br>
+                        ndidifelix126@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <strong>📞 Phone</strong><br>
+                        08137575522
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Buygadgets. All rights reserved. | Committed to protecting your privacy and data.</p>
+        </div>
+    </div>
+
+    <div class="back-to-top" onclick="scrollToTop()">
+        ↑
+    </div>
+
+    <script>
+        // Back to top functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
